@@ -66,7 +66,44 @@ namespace SeleniumTest.Steps
             }
         }
 
+        [Then(@"I change Parent_id and Title")]
+        public void ThenIChangeParent_IdAndTitle()
+        {
+            string title = itemPage.Title.GetAttribute("value");
+            title += "!";
+            int parent_id = Convert.ToInt16(itemPage.ParentId.GetAttribute("value"));
+            parent_id += 1;
+            itemPage.CreateNewItem(title, parent_id.ToString(), true);
 
+            Assert.Contains(title, itemPage.ItemTitleView.Text.Split( ));
+            Assert.Contains(parent_id.ToString(), itemPage.ItemParentIdView.Text.Split());
+        }
+
+        [Given(@"I create new '(.*)' item")]
+        public void GivenICreateNewItem(string itemName)
+        {
+            itemPage.CreateNewItem(itemName, "1990", true);
+        }
+
+        [Given(@"I search for the created '(.*)' item")]
+        public void GivenISearchForTheCreatedItem(string itemName)
+        {
+            homePage.SearchInputSendNewKeys(itemName);
+        }
+
+        [When(@"i click  '(.*)' button in Notification pop-up")]
+        public void WhenIClickButtonInNotificationPop_Up(string p0)
+        {
+            IAlert alert = driver.SwitchTo().Alert();
+            alert.Accept();
+        }
+
+        [Then(@"I search for deleted item '(.*)' and can't find it")]
+        public void ThenISearchForDeletedItemAndCanTFindIt(string itemName)
+        {
+            homePage.SearchInputSendNewKeys(itemName);
+            Assert.Throws<NoSuchElementException>(() => homePage.FirstRowTitle.Displayed);
+        }
 
 
     }
