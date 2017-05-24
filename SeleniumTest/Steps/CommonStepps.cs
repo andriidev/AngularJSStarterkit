@@ -5,9 +5,8 @@ using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.PageObjects;
 using OpenQA.Selenium.Support.UI;
 using TechTalk.SpecFlow;
-using NUnit;
+using Xunit;
 using OpenQA.Selenium.Chrome;
-using NUnit.Framework;
 
 namespace SeleniumTest.Steps
 {

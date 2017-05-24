@@ -5,9 +5,8 @@ using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.PageObjects;
 using OpenQA.Selenium.Support.UI;
 using TechTalk.SpecFlow;
-using NUnit;
+using Xunit;
 using OpenQA.Selenium.Chrome;
-using NUnit.Framework;
 using System;
 using TechTalk.SpecFlow.Assist;
 using System.Collections.Generic;
@@ -43,6 +42,7 @@ namespace SeleniumTest.Steps
 
         [Given(@"I click '(.*)' button in the first item row")]
         [When(@"I click '(.*)' button in the first item row")]
+        [Then(@"I click '(.*)' button in the first item row")]
         public void GivenIClickButtonInTheFirstItemRow(string buttonName)
         {
             switch (buttonName.ToLower())
@@ -55,6 +55,9 @@ namespace SeleniumTest.Steps
                     break;
                 case "edit":
                     homePage.EditButtonClick();
+                    break;
+                case "delete":
+                    homePage.DeleteButtonClick();
                     break;
 
                 default:

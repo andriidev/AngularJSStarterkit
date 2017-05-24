@@ -5,9 +5,8 @@ using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.PageObjects;
 using OpenQA.Selenium.Support.UI;
 using TechTalk.SpecFlow;
-using NUnit;
+using Xunit;
 using OpenQA.Selenium.Chrome;
-using NUnit.Framework;
 using System;
 
 namespace SeleniumTest.Steps
@@ -41,6 +40,32 @@ namespace SeleniumTest.Steps
                     break;
             }
         }
+
+        [When(@"I click paginator item")]
+        public void WhenIClickPaginatorItem()
+        {
+
+            bool found = false;
+            int paginatorPageNumber = 0;
+
+            int paginationCount = mainPage.GetPaginationCount();
+            mainPage.SetDriver(driver);
+
+            while (paginatorPageNumber <= paginationCount && !found)
+            {
+                public void ThenISeeThatSortedInDescendingOrder("id");
+
+                paginatorPageNumber++;
+                if (paginatorPageNumber < paginationCount)
+                {
+                    mainPage.ClickPaginationNumber(paginatorPageNumber);
+                }
+
+
+            }
+            Assert.False(found);
+        }
+
 
 
     }

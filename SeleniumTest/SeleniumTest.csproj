@@ -59,17 +59,29 @@
     <Reference Include="WebDriver.Support, Version=3.4.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Selenium.Support.3.4.0\lib\net40\WebDriver.Support.dll</HintPath>
     </Reference>
+    <Reference Include="xunit.abstractions, Version=2.0.0.0, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c, processorArchitecture=MSIL">
+      <HintPath>..\packages\xunit.abstractions.2.0.1\lib\net35\xunit.abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="xunit.assert, Version=2.2.0.3545, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c, processorArchitecture=MSIL">
+      <HintPath>..\packages\xunit.assert.2.2.0\lib\netstandard1.1\xunit.assert.dll</HintPath>
+    </Reference>
+    <Reference Include="xunit.core, Version=2.2.0.3545, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c, processorArchitecture=MSIL">
+      <HintPath>..\packages\xunit.extensibility.core.2.2.0\lib\netstandard1.1\xunit.core.dll</HintPath>
+    </Reference>
+    <Reference Include="xunit.execution.desktop, Version=2.2.0.3545, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c, processorArchitecture=MSIL">
+      <HintPath>..\packages\xunit.extensibility.execution.2.2.0\lib\net452\xunit.execution.desktop.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Features\2 ItemCreation.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>2 ItemCreation.feature</DependentUpon>
-    </Compile>
     <Compile Include="Features\1 LogIn.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>1 LogIn.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\2 ItemCreation.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>2 ItemCreation.feature</DependentUpon>
     </Compile>
     <Compile Include="Features\3 ItemBelongToGroup.feature.cs">
       <AutoGen>True</AutoGen>
@@ -81,15 +93,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>4 EditViewDeleteItems.feature</DependentUpon>
     </Compile>
-    <Compile Include="Features\7 Sorting.feature.cs">
+    <Compile Include="Features\6. Pagination is enabled when viewing the items.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>7 Sorting.feature</DependentUpon>
-    </Compile>
-    <Compile Include="Features\9 LocalizationHandles.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>9 LocalizationHandles.feature</DependentUpon>
+      <DependentUpon>6. Pagination is enabled when viewing the items.feature</DependentUpon>
     </Compile>
     <Compile Include="PageObjects\HomePage.cs" />
     <Compile Include="PageObjects\LoginPage.cs" />
@@ -100,6 +107,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="Steps\Class1.cs" />
     <Compile Include="Steps\CommonStepps.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Steps\HomePageSteps.cs" />
@@ -130,13 +138,9 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>4 EditViewDeleteItems.feature.cs</LastGenOutput>
     </None>
-    <None Include="Features\7 Sorting.feature">
+    <None Include="Features\6. Pagination is enabled when viewing the items.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>7 Sorting.feature.cs</LastGenOutput>
-    </None>
-    <None Include="Features\9 LocalizationHandles.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>9 LocalizationHandles.feature.cs</LastGenOutput>
+      <LastGenOutput>6. Pagination is enabled when viewing the items.feature.cs</LastGenOutput>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
