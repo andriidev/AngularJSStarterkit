@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using System.Collections.Generic;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 
 namespace SeleniumTest.PageObjects
@@ -26,6 +27,24 @@ namespace SeleniumTest.PageObjects
         public IWebElement EditButton { get; set; }
         [FindsBy(How = How.CssSelector, Using = "[ng-really-click='deleteItem(item.id)']")]
         public IWebElement DeleteButton { get; set; }
+        [FindsBy(How = How.CssSelector, Using = "th:nth-child(1) > a")]
+        public IWebElement IdTableHeader { get; set; }
+        [FindsBy(How = How.CssSelector, Using = "th:nth-child(2) > a")]
+        public IWebElement TitleTableHeader { get; set; }
+        [FindsBy(How = How.CssSelector, Using = "th:nth-child(3) > a")]
+        public IWebElement ParentIdTableHeader { get; set; }
+        [FindsBy(How = How.CssSelector, Using = "th:nth-child(4) > a")]
+        public IWebElement ActiveTableHeader { get; set; }
+        [FindsBy(How = How.CssSelector, Using = "td:nth-child(1)")]
+        public IList<IWebElement> IdList { get; set; }
+        [FindsBy(How = How.CssSelector, Using = "td:nth-child(2)")]
+        public IList<IWebElement> TitleList { get; set; }
+        [FindsBy(How = How.CssSelector, Using = "td:nth-child(3)")]
+        public IList<IWebElement> ParentIdList { get; set; }
+        [FindsBy(How = How.CssSelector, Using = "td:nth-child(4)")]
+        public IList<IWebElement> ActiveList { get; set; }
+
+
 
         //Actions
         public void AddNewButtonClick()

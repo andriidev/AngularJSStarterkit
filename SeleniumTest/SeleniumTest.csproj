@@ -81,6 +81,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>4 EditViewDeleteItems.feature</DependentUpon>
     </Compile>
+    <Compile Include="Features\7 Sorting.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>7 Sorting.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\9 LocalizationHandles.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>9 LocalizationHandles.feature</DependentUpon>
+    </Compile>
     <Compile Include="PageObjects\HomePage.cs" />
     <Compile Include="PageObjects\LoginPage.cs" />
     <Compile Include="PageObjects\MainPage.cs" />
@@ -98,6 +108,7 @@
     <Compile Include="Steps\ItemPageSteps.cs" />
     <Compile Include="Utilities\Dictionary.cs" />
     <Compile Include="Utilities\DriverPoC.cs" />
+    <Compile Include="Utilities\Helper.cs" />
     <Compile Include="Utilities\ItemTableToFill.cs" />
     <Compile Include="Utilities\LogInTableToFill.cs" />
   </ItemGroup>
@@ -118,6 +129,14 @@
     <None Include="Features\4 EditViewDeleteItems.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>4 EditViewDeleteItems.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\7 Sorting.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>7 Sorting.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\9 LocalizationHandles.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>9 LocalizationHandles.feature.cs</LastGenOutput>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
