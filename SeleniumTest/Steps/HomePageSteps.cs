@@ -48,9 +48,11 @@ namespace SeleniumTest.Steps
                 case "admin":
                     homePage.AdminButtonClick();
                     break;
-
                 case "show":
                     homePage.ShowButtonClick();
+                    break;
+                case "edit":
+                    homePage.EditButtonClick();
                     break;
 
                 default:

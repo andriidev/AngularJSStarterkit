@@ -82,9 +82,27 @@ this.ScenarioSetup(scenarioInfo);
 #line 7
  testRunner.When("I click \'Show\' button in the first item row", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 8
- testRunner.Then("I navigated to View item page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 9
-    testRunner.And("I see following elements", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Then("I landed to \'View\' item page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Edit item")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "4 EditViewDeleteItems.feature")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("login")]
+        public virtual void EditItem()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Edit item", new string[] {
+                        "login"});
+#line 14
+this.ScenarioSetup(scenarioInfo);
+#line 15
+ testRunner.Given("I click \'Admin\' button in the first item row", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 16
+    testRunner.When("I click \'Edit\' button in the first item row", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 17
+    testRunner.Then("I landed to \'Edit\' item page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

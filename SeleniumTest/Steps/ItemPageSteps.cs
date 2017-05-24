@@ -15,15 +15,15 @@ using TechTalk.SpecFlow.Assist;
 namespace SeleniumTest.Steps
 {
     [Binding]
-    class NewItemPageSteps
+    class ItemPageSteps
     {
         private DriverPoC driver = new DriverPoC();
-        private NewItemPage newItemPage = new NewItemPage();
+        private ItemPage itemPage = new ItemPage();
         private HomePage homePage = new HomePage();
 
-        public NewItemPageSteps()
+        public ItemPageSteps()
         {
-            PageFactory.InitElements(driver, newItemPage);
+            PageFactory.InitElements(driver, itemPage);
             PageFactory.InitElements(driver, homePage);
         }
 
@@ -32,7 +32,7 @@ namespace SeleniumTest.Steps
         {
             var itemTable = table.CreateInstance<ItemTableToFill>();
             itemTable.Title += DateTime.Now.ToString(" yyyy.MM.dd hh.mm.ss");
-            newItemPage.CreateNewItem(itemTable.Title, itemTable.Parent_id, Convert.ToBoolean(itemTable.Active));
+            itemPage.CreateNewItem(itemTable.Title, itemTable.Parent_id, Convert.ToBoolean(itemTable.Active));
             homePage.SearchInputSendNewKeys(itemTable.Title);
             Assert.AreEqual(itemTable.Title, homePage.FirstRowTitle.Text);
         }
@@ -42,11 +42,31 @@ namespace SeleniumTest.Steps
         {
             var itemTable = table.CreateInstance<ItemTableToFill>();
             itemTable.Title += DateTime.Now.ToString(" yyyy.MM.dd hh.mm.ss");
-            newItemPage.CreateNewItem(itemTable.Title, itemTable.Parent_id, Convert.ToBoolean(itemTable.Active));
+            itemPage.CreateNewItem(itemTable.Title, itemTable.Parent_id, Convert.ToBoolean(itemTable.Active));
             homePage.SearchInputSendNewKeys(itemTable.Title);
             new SelectElement(homePage.GroupDropDown).SelectByText(itemTable.Group);
             Assert.AreEqual(itemTable.Title, homePage.FirstRowTitle.Text);
         }
+
+        [Then(@"I landed to '(.*)' item page")]
+        public void ThenILandedToItemPage(string PageName)
+        {
+            switch (PageName.ToLower())
+            {
+                case "view":
+                    Assert.AreEqual(Dictionary.EngDictionary["View"], itemPage.ItemViewPageTitle.Text);
+                    break;
+                case "edit":
+                    Assert.AreEqual(Dictionary.EngDictionary["Edit"], itemPage.ItemViewPageTitle.Text);
+                    break;
+                case "create":
+                    Assert.AreEqual(Dictionary.EngDictionary["create"], itemPage.ItemViewPageTitle.Text);
+                    break;
+
+            }
+        }
+
+
 
 
     }

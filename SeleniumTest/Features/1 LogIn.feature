@@ -9,6 +9,7 @@ Scenario: Login with valid credentials
     | Email                   | Password        |
     | validuser@malinator.com | ValidPassword2! |
     Then I see 'successively logged in' message
+     And I click 'Logout' button in header
 
 Scenario Outline: Login with invalid credentials
     Given I navigate to the 'Main' page

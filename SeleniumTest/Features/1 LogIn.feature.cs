@@ -90,6 +90,8 @@ this.ScenarioSetup(scenarioInfo);
  testRunner.When("I enter credentials and click Login button", ((string)(null)), table1, "When ");
 #line 11
     testRunner.Then("I see \'successively logged in\' message", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 12
+     testRunner.And("I click \'Logout\' button in header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -97,11 +99,11 @@ this.ScenarioSetup(scenarioInfo);
         public virtual void LoginWithInvalidCredentials(string email, string password, string[] exampleTags)
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Login with invalid credentials", exampleTags);
-#line 13
-this.ScenarioSetup(scenarioInfo);
 #line 14
-    testRunner.Given("I navigate to the \'Main\' page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+this.ScenarioSetup(scenarioInfo);
 #line 15
+    testRunner.Given("I navigate to the \'Main\' page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 16
     testRunner.And("I click \'Login\' button in header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
@@ -110,9 +112,9 @@ this.ScenarioSetup(scenarioInfo);
             table2.AddRow(new string[] {
                         string.Format("{0}", email),
                         string.Format("{0}", password)});
-#line 16
+#line 17
  testRunner.When("I enter credentials and click Login button", ((string)(null)), table2, "When ");
-#line 19
+#line 20
     testRunner.Then("I still see \'Login\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

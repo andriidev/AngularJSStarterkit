@@ -3,8 +3,11 @@ using OpenQA.Selenium.Support.PageObjects;
 
 namespace SeleniumTest.PageObjects
 {
-    class NewItemPage
+    class ItemPage
     {
+        //Text, Labels
+        [FindsBy(How = How.CssSelector, Using = ".panel-title")]
+        public IWebElement ItemViewPageTitle { get; set; }
         //Inputs
         [FindsBy(How = How.CssSelector, Using = "[ng-model='new.title_en']")]
         public IWebElement Title { get; set; }

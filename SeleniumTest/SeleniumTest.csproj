@@ -84,7 +84,7 @@
     <Compile Include="PageObjects\HomePage.cs" />
     <Compile Include="PageObjects\LoginPage.cs" />
     <Compile Include="PageObjects\MainPage.cs" />
-    <Compile Include="PageObjects\NewItemPage.cs" />
+    <Compile Include="PageObjects\ItemPage.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
@@ -95,7 +95,7 @@
     <Compile Include="Steps\HomePageSteps.cs" />
     <Compile Include="Steps\LogInPageSteps.cs" />
     <Compile Include="Steps\MainPageSteps.cs" />
-    <Compile Include="Steps\NewItemPageSteps.cs" />
+    <Compile Include="Steps\ItemPageSteps.cs" />
     <Compile Include="Utilities\Dictionary.cs" />
     <Compile Include="Utilities\DriverPoC.cs" />
     <Compile Include="Utilities\ItemTableToFill.cs" />

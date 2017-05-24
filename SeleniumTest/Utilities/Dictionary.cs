@@ -8,7 +8,12 @@ namespace SeleniumTest.Utilities
         {
             //Login Page
             {"successively logged in", "successively logged in"},
-            {"LoginError", "TBD"}
+            {"LoginError", "TBD"},
+            //ItemView page
+            { "View", "Show"},
+            { "Create", "Add a new item"},
+            { "Edit", "EDIT item"}
+
         };
 
     }
