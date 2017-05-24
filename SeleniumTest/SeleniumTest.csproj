@@ -116,6 +116,7 @@
     <Compile Include="Steps\ItemPageSteps.cs" />
     <Compile Include="Utilities\Dictionary.cs" />
     <Compile Include="Utilities\DriverPoC.cs" />
+    <Compile Include="Utilities\Helper.cs" />
     <Compile Include="Utilities\ItemTableToFill.cs" />
     <Compile Include="Utilities\LogInTableToFill.cs" />
   </ItemGroup>
