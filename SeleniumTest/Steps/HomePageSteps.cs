@@ -168,18 +168,18 @@ namespace SeleniumTest.Steps
             switch (value.ToLower())
             {
                 case "french":
-                    Assert.AreEqual(Dictionary.FrDictionary["Home"], homePage.HomeButton.Text);
-                    Assert.AreEqual(Dictionary.FrDictionary["Logout"], homePage.LogoutButton.Text);
-                    Assert.AreEqual(Dictionary.FrDictionary["Help"], homePage.HelpButton.Text);
-                    Assert.AreEqual(Dictionary.FrDictionary["Global message"], homePage.GlobalMessage.Text);
+                    Assert.Equal(Dictionary.FrDictionary["Home"], homePage.HomeButton.Text);
+                    Assert.Equal(Dictionary.FrDictionary["Logout"], homePage.LogoutButton.Text);
+                    Assert.Equal(Dictionary.FrDictionary["Help"], homePage.HelpButton.Text);
+                    Assert.Equal(Dictionary.FrDictionary["Global message"], homePage.GlobalMessage.Text);
 
                     break;
 
                 case "english":
-                    Assert.AreEqual(Dictionary.EngDictionary["Home"], homePage.HomeButton.Text);
-                    Assert.AreEqual(Dictionary.EngDictionary["Logout"], homePage.LogoutButton.Text);
-                    Assert.AreEqual(Dictionary.EngDictionary["Help"], homePage.HelpButton.Text);
-                    Assert.AreEqual(Dictionary.EngDictionary["Global message"], homePage.GlobalMessage.Text);
+                    Assert.Equal(Dictionary.EngDictionary["Home"], homePage.HomeButton.Text);
+                    Assert.Equal(Dictionary.EngDictionary["Logout"], homePage.LogoutButton.Text);
+                    Assert.Equal(Dictionary.EngDictionary["Help"], homePage.HelpButton.Text);
+                    Assert.Equal(Dictionary.EngDictionary["Global message"], homePage.GlobalMessage.Text);
 
                     break;
 
@@ -188,19 +188,13 @@ namespace SeleniumTest.Steps
                     break;
             }
         }
+
+        [When(@"I click in Item title in the table")]
+        public void WhenIClickInItemTitleInTheTable()
+        {
+            homePage.FirstRowTitle.Click();
+        }
     }
 }
-
-        [When(@"I see following item in '(.*)'")]
-        public void WhenISeeFollowingItemIn(string p0, Table table)
-        {
-            
-        }
-
-    }
-
-    }
-
-
 
 

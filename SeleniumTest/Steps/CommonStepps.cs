@@ -22,7 +22,6 @@ namespace SeleniumTest.Steps
         public void BeforeScenarioLogIn()
         {
             GivenINavigateToThePage("login");
-            driver.WaitForElementVisible(By.CssSelector(".btn.btn-default"));
             loginPage.Login("user@mail.com", "password");
         }
         public CommonSteps()

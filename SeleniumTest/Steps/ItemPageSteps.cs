@@ -47,6 +47,24 @@ namespace SeleniumTest.Steps
             Assert.Equal(itemTable.Title, homePage.FirstRowTitle.Text);
         }
 
+        [When(@"I attempt to create new Item with invalid data")]
+        public void WhenIAttemptToCreateNewItemWithInvalidData(Table table)
+        {
+            var itemTable = table.CreateInstance<ItemTableToFill>();
+            if (itemTable.Title != "")
+            {
+                itemTable.Title += DateTime.Now.ToString(" yyyy.MM.dd hh.mm.ss");
+            }
+            itemPage.CreateNewItem(itemTable.Title, itemTable.Parent_id, Convert.ToBoolean(itemTable.Active));
+        }
+
+        [Then(@"I still on New Payment page")]
+        public void ThenIStillOnNewPaymentPage()
+        {
+            Assert.Equal(Dictionary.EngDictionary["Create"], itemPage.ItemViewPageTitle.Text);
+        }
+
+
         [Then(@"I landed to '(.*)' item page")]
         public void ThenILandedToItemPage(string PageName)
         {
@@ -107,6 +125,7 @@ namespace SeleniumTest.Steps
         [When(@"I click Delete button on Item View page")]
         public void WhenIClickDeleteButtonOnItemViewPage()
         {
+            driver.WaitForElementVisible(By.CssSelector(".glyphicon.glyphicon-trash"));
             itemPage.DeleteButtonClick();
         }
 

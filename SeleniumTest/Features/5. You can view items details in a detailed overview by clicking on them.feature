@@ -2,8 +2,7 @@
 
 @login
 Scenario: View item From Home page
- When I click in Item title in the table
- Then I landed to 'View' item page
-      #And I see following elements
-     # | ItemList |
-     # |          |
+    When I click in Item title in the table
+    Then I landed to 'View' item page
+      And I click 'Logout' button in header
+

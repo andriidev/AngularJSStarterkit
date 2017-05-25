@@ -78,9 +78,11 @@ namespace SeleniumTest.Features
 #line 4
 this.ScenarioSetup(scenarioInfo);
 #line 5
- testRunner.When("I click in Item title in the table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+    testRunner.When("I click in Item title in the table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 6
- testRunner.Then("I landed to \'View\' item page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+    testRunner.Then("I landed to \'View\' item page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 7
+      testRunner.And("I click \'Logout\' button in header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
