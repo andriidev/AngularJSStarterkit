@@ -8,8 +8,17 @@ Scenario: View item From Home page
 	Then I landed to 'View' item page
      And I click 'Logout' button in header
 
-
-
+Scenario: Edit item from View page
+    Given I navigate to the 'Main' page
+      And I click 'Login' button in header
+	When I enter credentials and click Login button
+    | Email                   | Password        |
+    | validuser@malinator.com | ValidPassword2! |
+      And I click in Item title in the table
+	  And I click Edit button on Item View page
+    Then I landed to 'Edit' item page
+      And I change Parent_id and Title
+      And I click 'Logout' button in header
 
 Scenario: Edit item from Home page
     Given I navigate to the 'Main' page

@@ -27,7 +27,7 @@ private static IWebDriver driver;
         {
             var driver = new ChromeDriver();
             driver.Manage().Window.Size = new Size(1024, 768);
-            driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(10));
+            driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(2));
             jsExecutor = driver as IJavaScriptExecutor;
             wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
             builder = new Actions(driver);

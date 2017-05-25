@@ -25,8 +25,11 @@ namespace SeleniumTest.PageObjects
         public IWebElement SubmitButton { get; set; }
         [FindsBy(How = How.CssSelector, Using = ".glyphicon.glyphicon-trash")]
         public IWebElement DeleteButton { get; set; }
+        [FindsBy(How = How.LinkText, Using = "edit")]
+        public IWebElement EditButton { get; set; }
 
 
+        //Actions
         public void TitleSendNewKeys(string title)
         {
             Title.Clear();
@@ -40,6 +43,11 @@ namespace SeleniumTest.PageObjects
         public void DeleteButtonClick()
         {
             DeleteButton.Click();
+        }
+        public void EditButtonClick()
+        {
+            EditButton.Click();
+            EditButton.Click();
         }
         public void CreateNewItem(string title, string parentId, bool active)
         {

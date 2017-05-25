@@ -9,7 +9,7 @@ using Xunit;
 using OpenQA.Selenium.Chrome;
 using System;
 using TechTalk.SpecFlow.Assist;
-
+using System.Threading;
 
 namespace SeleniumTest.Steps
 {
@@ -74,6 +74,7 @@ namespace SeleniumTest.Steps
                     Assert.Equal(Dictionary.EngDictionary["View"], itemPage.ItemViewPageTitle.Text);
                     break;
                 case "edit":
+                    Thread.Sleep(500);
                     Assert.Equal(Dictionary.EngDictionary["Edit"], itemPage.ItemViewPageTitle.Text);
                     break;
                 case "create":
@@ -129,6 +130,10 @@ namespace SeleniumTest.Steps
             itemPage.DeleteButtonClick();
         }
 
-
+        [When(@"I click Edit button on Item View page")]
+        public void WhenIClickEditButtonOnItemViewPage()
+        {
+            driver.FindElement(By.LinkText("edit")).Click();
+        }
     }
 }
