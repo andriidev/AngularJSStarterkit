@@ -3,8 +3,10 @@
 	As a math idiot
 	I want to be told the sum of two numbers
 
-@mytag
-Scenario: Paginator
-    Given I navigate to the 'Main' page
-	When I click paginator item
-	Then I see corresponding results in the table
+	@login
+Scenario: Paginator and Descending Sorting
+	When I click paginator item and check sorting by 'id'
+	  And I click paginator item and check sorting by 'Title'
+	  And I click paginator item and check sorting by 'Parent id'
+	  And I click paginator item and check sorting by 'Active'
+	  Then I click 'Logout' button in header

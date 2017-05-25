@@ -43,7 +43,18 @@ namespace SeleniumTest.PageObjects
         public IList<IWebElement> ParentIdList { get; set; }
         [FindsBy(How = How.CssSelector, Using = "td:nth-child(4)")]
         public IList<IWebElement> ActiveList { get; set; }
-
+        [FindsBy(How = How.CssSelector, Using = ".navbar-collapse > ul > li.active > a > span")]
+        public IWebElement HomeButton { get; set; }
+        [FindsBy(How = How.CssSelector, Using = ".navbar-collapse > ul > li:nth-child(3) > a")]
+        public IWebElement LogoutButton { get; set; }
+        [FindsBy(How = How.CssSelector, Using = ".navbar-collapse > ul > li:nth-child(4) > a")]
+        public IWebElement HelpButton { get; set; }
+        [FindsBy(How = How.CssSelector, Using = "ng-view > div > div.well > p")]
+        public IWebElement GlobalMessage { get; set; }
+        [FindsBy(How = How.CssSelector, Using = ".dropdown-toggle.ng-binding")]
+        public IWebElement LanguageDropdown { get; set; }
+        [FindsBy(How = How.CssSelector, Using = ".btn.ng-scope")]
+        public IList<IWebElement> OptionsInLanguageDropdown { get; set; }
 
 
         //Actions
@@ -71,6 +82,19 @@ namespace SeleniumTest.PageObjects
         {
             SearchInput.Clear();
             SearchInput.SendKeys(value);
+        }
+        public void SelectLocalisation(string language)
+        {
+            LanguageDropdown.Click();
+            switch (language.ToLower())
+            {
+                case "english":
+                    OptionsInLanguageDropdown[0].Click();
+                    break;
+                case "french":
+                    OptionsInLanguageDropdown[1].Click();
+                    break;
+            }
         }
     }
 }

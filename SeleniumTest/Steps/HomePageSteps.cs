@@ -20,6 +20,8 @@ namespace SeleniumTest.Steps
         private DriverPoC driver = new DriverPoC();
         private HomePage homePage = new HomePage();
 
+        public object Translations { get; private set; }
+
         public HomePageSteps()
         {
             PageFactory.InitElements(driver, homePage);
@@ -86,6 +88,7 @@ namespace SeleniumTest.Steps
                 case "active":
                     homePage.ActiveTableHeader.Click();
                     break;
+
                 default:
                     Assert.False(true, "Case undefined");
                     break;
@@ -121,7 +124,7 @@ namespace SeleniumTest.Steps
 
             expectedList.OrderByDescending(el => el);
 
-            Assert.AreEqual(expectedList, actualList);
+            Assert.Equal(expectedList, actualList);
         }
 
         [Then(@"I see that '(.*)' sorted in ascending order")]
@@ -150,28 +153,48 @@ namespace SeleniumTest.Steps
             expectedList = new List<string>(actualList);
             expectedList.Sort();
 
-            Assert.AreEqual(expectedList, actualList);
+            Assert.Equal(expectedList, actualList);
         }
 
-        [Given(@"I select '(.*)' from language drop-down")]
+        [When(@"I select '(.*)' from language drop-down")]
         public void GivenISelectFromLanguageDrop_Down(string value)
         {
-            switch(value)
+            homePage.SelectLocalisation(value);
+        }
+
+        [Then(@"I see elements in home page in '(.*)'")]
+        public void ThenISeeElementsInHomePageIn(string value)
+        {
+            switch (value.ToLower())
             {
-            
+                case "french":
+                    Assert.Equal(Dictionary.FrDictionary["Home"], homePage.HomeButton.Text);
+                    Assert.Equal(Dictionary.FrDictionary["Logout"], homePage.LogoutButton.Text);
+                    Assert.Equal(Dictionary.FrDictionary["Help"], homePage.HelpButton.Text);
+                    Assert.Equal(Dictionary.FrDictionary["Global message"], homePage.GlobalMessage.Text);
+
+                    break;
+
+                case "english":
+                    Assert.Equal(Dictionary.EngDictionary["Home"], homePage.HomeButton.Text);
+                    Assert.Equal(Dictionary.EngDictionary["Logout"], homePage.LogoutButton.Text);
+                    Assert.Equal(Dictionary.EngDictionary["Help"], homePage.HelpButton.Text);
+                    Assert.Equal(Dictionary.EngDictionary["Global message"], homePage.GlobalMessage.Text);
+
+                    break;
+
+                default:
+                    Assert.False(true, "Case undefined");
+                    break;
             }
         }
 
-        [When(@"I see following item in '(.*)'")]
-        public void WhenISeeFollowingItemIn(string p0, Table table)
+        [When(@"I click in Item title in the table")]
+        public void WhenIClickInItemTitleInTheTable()
         {
-            
+            homePage.FirstRowTitle.Click();
         }
-
     }
-
-    }
-
-
+}
 
 

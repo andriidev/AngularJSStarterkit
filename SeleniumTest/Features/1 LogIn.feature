@@ -4,12 +4,12 @@
 
 Scenario: Login with valid credentials
     Given I navigate to the 'Main' page
-    And I click 'Login' button in header
+      And I click 'Login' button in header
 	When I enter credentials and click Login button
     | Email                   | Password        |
     | validuser@malinator.com | ValidPassword2! |
     Then I see 'successively logged in' message
-     And I click 'Logout' button in header
+      And I click 'Logout' button in header
 
 Scenario Outline: Login with invalid credentials
     Given I navigate to the 'Main' page
@@ -24,9 +24,8 @@ Examples:
     | invalid email                    |          |
     | invalid@email                    | password |
     | emaildoesn'texist@mailinator.com | password |
+    | validEmail@malinator.com         |          |
     |                                  | password |
     |                                  |          |
-    | validEmail@malinator.com         |          |
-
 
 

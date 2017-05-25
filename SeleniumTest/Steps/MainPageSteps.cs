@@ -41,20 +41,15 @@ namespace SeleniumTest.Steps
             }
         }
 
-        [When(@"I click paginator item")]
-        public void WhenIClickPaginatorItem()
+        [When(@"I click paginator item and check sorting by '(.*)'")]
+        public void WhenIClickPaginatorItemAndCheckSortingBy(string column)
         {
-
-            bool found = false;
             int paginatorPageNumber = 0;
-
             int paginationCount = mainPage.GetPaginationCount();
-            mainPage.SetDriver(driver);
-
-            while (paginatorPageNumber <= paginationCount && !found)
+            while (paginatorPageNumber <= paginationCount)
             {
-                public void ThenISeeThatSortedInDescendingOrder("id");
-
+                HomePageSteps homePage = new HomePageSteps();
+                homePage.ThenISeeThatSortedInDescendingOrder(column);
                 paginatorPageNumber++;
                 if (paginatorPageNumber < paginationCount)
                 {
@@ -63,10 +58,10 @@ namespace SeleniumTest.Steps
 
 
             }
-            Assert.False(found);
         }
-
-
-
     }
 }
+
+
+
+    

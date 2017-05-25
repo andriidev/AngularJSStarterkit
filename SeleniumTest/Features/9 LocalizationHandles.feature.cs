@@ -68,30 +68,33 @@ namespace SeleniumTest.Features
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Add two numbers")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("French language")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "9 LocalizationHandles")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("login")]
-        public virtual void AddTwoNumbers()
+        public virtual void FrenchLanguage()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add two numbers", new string[] {
-                        "login"});
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("French language", ((string[])(null)));
 #line 5
 this.ScenarioSetup(scenarioInfo);
 #line 6
- testRunner.When("I select \'french\' from language drop-down", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-            TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
-                        "ItemList"});
-            table1.AddRow(new string[] {
-                        "Home"});
-            table1.AddRow(new string[] {
-                        "Logout"});
-            table1.AddRow(new string[] {
-                        "Help"});
-            table1.AddRow(new string[] {
-                        "Global message"});
+ testRunner.When("I select \'French\' from language drop-down", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 7
-    testRunner.Then("I see following item in \'french\'", ((string)(null)), table1, "Then ");
+    testRunner.Then("I see elements in home page in \'French\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("English language")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "9 LocalizationHandles")]
+        public virtual void EnglishLanguage()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("English language", ((string[])(null)));
+#line 9
+this.ScenarioSetup(scenarioInfo);
+#line 10
+ testRunner.When("I select \'English\' from language drop-down", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 11
+    testRunner.Then("I see elements in home page in \'English\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
