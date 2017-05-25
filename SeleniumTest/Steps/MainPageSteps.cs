@@ -5,9 +5,8 @@ using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.PageObjects;
 using OpenQA.Selenium.Support.UI;
 using TechTalk.SpecFlow;
-using NUnit;
+using Xunit;
 using OpenQA.Selenium.Chrome;
-using NUnit.Framework;
 using System;
 
 namespace SeleniumTest.Steps
@@ -42,6 +41,27 @@ namespace SeleniumTest.Steps
             }
         }
 
+        [When(@"I click paginator item and check sorting by '(.*)'")]
+        public void WhenIClickPaginatorItemAndCheckSortingBy(string column)
+        {
+            int paginatorPageNumber = 0;
+            int paginationCount = mainPage.GetPaginationCount();
+            while (paginatorPageNumber <= paginationCount)
+            {
+                HomePageSteps homePage = new HomePageSteps();
+                homePage.ThenISeeThatSortedInDescendingOrder(column);
+                paginatorPageNumber++;
+                if (paginatorPageNumber < paginationCount)
+                {
+                    mainPage.ClickPaginationNumber(paginatorPageNumber);
+                }
 
+
+            }
+        }
     }
 }
+
+
+
+    

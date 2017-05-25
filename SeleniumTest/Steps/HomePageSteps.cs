@@ -5,9 +5,8 @@ using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.PageObjects;
 using OpenQA.Selenium.Support.UI;
 using TechTalk.SpecFlow;
-using NUnit;
+using Xunit;
 using OpenQA.Selenium.Chrome;
-using NUnit.Framework;
 using System;
 using TechTalk.SpecFlow.Assist;
 using System.Collections.Generic;
@@ -45,6 +44,7 @@ namespace SeleniumTest.Steps
 
         [Given(@"I click '(.*)' button in the first item row")]
         [When(@"I click '(.*)' button in the first item row")]
+        [Then(@"I click '(.*)' button in the first item row")]
         public void GivenIClickButtonInTheFirstItemRow(string buttonName)
         {
             switch (buttonName.ToLower())
@@ -57,6 +57,9 @@ namespace SeleniumTest.Steps
                     break;
                 case "edit":
                     homePage.EditButtonClick();
+                    break;
+                case "delete":
+                    homePage.DeleteButtonClick();
                     break;
 
                 default:
@@ -121,7 +124,7 @@ namespace SeleniumTest.Steps
 
             expectedList.OrderByDescending(el => el);
 
-            Assert.AreEqual(expectedList, actualList);
+            Assert.Equal(expectedList, actualList);
         }
 
         [Then(@"I see that '(.*)' sorted in ascending order")]
@@ -150,7 +153,7 @@ namespace SeleniumTest.Steps
             expectedList = new List<string>(actualList);
             expectedList.Sort();
 
-            Assert.AreEqual(expectedList, actualList);
+            Assert.Equal(expectedList, actualList);
         }
 
         [When(@"I select '(.*)' from language drop-down")]
@@ -188,13 +191,16 @@ namespace SeleniumTest.Steps
     }
 }
 
+        [When(@"I see following item in '(.*)'")]
+        public void WhenISeeFollowingItemIn(string p0, Table table)
+        {
+            
+        }
 
-        
-    
+    }
 
+    }
 
-
-    
 
 
 

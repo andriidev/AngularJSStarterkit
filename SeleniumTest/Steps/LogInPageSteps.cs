@@ -5,9 +5,8 @@ using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.PageObjects;
 using OpenQA.Selenium.Support.UI;
 using TechTalk.SpecFlow;
-using NUnit;
+using Xunit;
 using OpenQA.Selenium.Chrome;
-using NUnit.Framework;
 using System;
 using TechTalk.SpecFlow.Assist;
 
@@ -46,7 +45,7 @@ namespace SeleniumTest.Steps
             switch (message.ToLower())
             {
                 case "successively logged in":
-                    Assert.AreEqual(Dictionary.EngDictionary["successively logged in"] , loginPage.SuccessLoginMessage.Text);
+                    Assert.Equal(Dictionary.EngDictionary["successively logged in"] , loginPage.SuccessLoginMessage.Text);
                     break;
 
                 default:

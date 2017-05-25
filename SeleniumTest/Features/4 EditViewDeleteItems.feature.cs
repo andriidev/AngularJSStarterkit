@@ -68,12 +68,12 @@ namespace SeleniumTest.Features
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("View item")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("View item From Home page")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "4 EditViewDeleteItems.feature")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("login")]
-        public virtual void ViewItem()
+        public virtual void ViewItemFromHomePage()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("View item", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("View item From Home page", new string[] {
                         "login"});
 #line 5
 this.ScenarioSetup(scenarioInfo);
@@ -88,21 +88,79 @@ this.ScenarioSetup(scenarioInfo);
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Edit item")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Edit item from Home page")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "4 EditViewDeleteItems.feature")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("login")]
-        public virtual void EditItem()
+        public virtual void EditItemFromHomePage()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Edit item", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Edit item from Home page", new string[] {
                         "login"});
-#line 14
-this.ScenarioSetup(scenarioInfo);
 #line 15
- testRunner.Given("I click \'Admin\' button in the first item row", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+this.ScenarioSetup(scenarioInfo);
 #line 16
-    testRunner.When("I click \'Edit\' button in the first item row", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Given("I click \'Admin\' button in the first item row", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 17
+    testRunner.When("I click \'Edit\' button in the first item row", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 18
     testRunner.Then("I landed to \'Edit\' item page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 19
+      testRunner.And("I change Parent_id and Title", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Delete item from Home page")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "4 EditViewDeleteItems.feature")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("login")]
+        public virtual void DeleteItemFromHomePage()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Delete item from Home page", new string[] {
+                        "login"});
+#line 22
+this.ScenarioSetup(scenarioInfo);
+#line 23
+ testRunner.Given("I click \'Add new\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 24
+   testRunner.And("I create new \'ItemToDelete\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 25
+   testRunner.And("I search for the created \'ItemToDelete\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 26
+   testRunner.And("I click \'Admin\' button in the first item row", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 27
+    testRunner.When("I click \'Delete\' button in the first item row", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 28
+   testRunner.And("i click  \'OK\' button in Notification pop-up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 29
+ testRunner.Then("I search for deleted item \'ItemToDelete\' and can\'t find it", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Delete item using \'Remove\' button on View page")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "4 EditViewDeleteItems.feature")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("login")]
+        public virtual void DeleteItemUsingRemoveButtonOnViewPage()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Delete item using \'Remove\' button on View page", new string[] {
+                        "login"});
+#line 32
+this.ScenarioSetup(scenarioInfo);
+#line 33
+ testRunner.Given("I click \'Add new\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 34
+   testRunner.And("I create new \'ItemToDelete\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 35
+   testRunner.And("I search for the created \'ItemToDelete\' item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 36
+ testRunner.When("I click in Item title in the table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 37
+   testRunner.And("I click Delete button on Item View page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 38
+   testRunner.And("i click  \'OK\' button in Notification pop-up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 39
+ testRunner.Then("I search for deleted item \'ItemToDelete\' and can\'t find it", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
