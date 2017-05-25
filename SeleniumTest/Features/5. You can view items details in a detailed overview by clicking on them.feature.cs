@@ -18,20 +18,19 @@ namespace SeleniumTest.Features
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "2.1.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [Microsoft.VisualStudio.TestTools.UnitTesting.TestClassAttribute()]
-    public partial class _6Feature
+    public partial class _5_YouCanViewItemsDetailsInADetailedOverviewByClickingOnThemFeature
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
         
-#line 1 "6. Pagination is enabled when viewing the items.feature"
+#line 1 "5. You can view items details in a detailed overview by clicking on them.feature"
 #line hidden
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.ClassInitializeAttribute()]
         public static void FeatureSetup(Microsoft.VisualStudio.TestTools.UnitTesting.TestContext testContext)
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner(null, 0);
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "6", "\tIn order to avoid silly mistakes\r\n\tAs a math idiot\r\n\tI want to be told the sum o" +
-                    "f two numbers", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "5. You can view items details in a detailed overview by clicking on them", null, ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -46,9 +45,9 @@ namespace SeleniumTest.Features
         public virtual void TestInitialize()
         {
             if (((testRunner.FeatureContext != null) 
-                        && (testRunner.FeatureContext.FeatureInfo.Title != "6")))
+                        && (testRunner.FeatureContext.FeatureInfo.Title != "5. You can view items details in a detailed overview by clicking on them")))
             {
-                SeleniumTest.Features._6Feature.FeatureSetup(null);
+                SeleniumTest.Features._5_YouCanViewItemsDetailsInADetailedOverviewByClickingOnThemFeature.FeatureSetup(null);
             }
         }
         
@@ -69,25 +68,19 @@ namespace SeleniumTest.Features
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Paginator and Descending Sorting")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "6")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("View item From Home page")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "5. You can view items details in a detailed overview by clicking on them")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("login")]
-        public virtual void PaginatorAndDescendingSorting()
+        public virtual void ViewItemFromHomePage()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Paginator and Descending Sorting", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("View item From Home page", new string[] {
                         "login"});
-#line 7
+#line 4
 this.ScenarioSetup(scenarioInfo);
-#line 8
- testRunner.When("I click paginator item and check sorting by \'id\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 9
-   testRunner.And("I click paginator item and check sorting by \'Title\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 10
-   testRunner.And("I click paginator item and check sorting by \'Parent id\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 11
-   testRunner.And("I click paginator item and check sorting by \'Active\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 12
-   testRunner.Then("I click \'Logout\' button in header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 5
+ testRunner.When("I click in Item title in the table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 6
+ testRunner.Then("I landed to \'View\' item page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

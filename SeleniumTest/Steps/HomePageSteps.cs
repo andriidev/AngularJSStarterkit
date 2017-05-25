@@ -121,7 +121,7 @@ namespace SeleniumTest.Steps
 
             expectedList.OrderByDescending(el => el);
 
-            Assert.AreEqual(expectedList, actualList);
+            Assert.Equal(expectedList, actualList);
         }
 
         [Then(@"I see that '(.*)' sorted in ascending order")]
@@ -150,7 +150,7 @@ namespace SeleniumTest.Steps
             expectedList = new List<string>(actualList);
             expectedList.Sort();
 
-            Assert.AreEqual(expectedList, actualList);
+            Assert.Equal(expectedList, actualList);
         }
 
         [Given(@"I select '(.*)' from language drop-down")]
@@ -168,9 +168,16 @@ namespace SeleniumTest.Steps
             
         }
 
-    }
+        [When(@"I click in Item title in the table")]
+        public void WhenIClickInItemTitleInTheTable()
+        {
+            homePage.FirstRowTitle.Click();
+        }
+
 
     }
+
+}
 
 
 

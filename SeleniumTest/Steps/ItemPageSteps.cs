@@ -104,6 +104,12 @@ namespace SeleniumTest.Steps
             Assert.Throws<NoSuchElementException>(()=> homePage.FirstRowTitle.Displayed);
         }
 
+        [When(@"I click Delete button on Item View page")]
+        public void WhenIClickDeleteButtonOnItemViewPage()
+        {
+            itemPage.DeleteButtonClick();
+        }
+
 
     }
 }

@@ -91,7 +91,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 11
     testRunner.Then("I see \'successively logged in\' message", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 12
-     testRunner.And("I click \'Logout\' button in header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+      testRunner.And("I click \'Logout\' button in header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
